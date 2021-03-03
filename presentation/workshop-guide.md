@@ -64,7 +64,7 @@ If you want to do the exercises but don't have the dependencies you can try to i
 Please, clone the repo with the exercises
 
 ```
-TODO: Repo url here 
+https://github.com/ismanapa/react-native-intro
 ```
 
 Also, make npm install in the `MyExampleApp` directory
