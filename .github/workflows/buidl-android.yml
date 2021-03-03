@@ -1,0 +1,47 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  build-android-aab:
+    runs-on: ubuntu-latest
+    name: Build Android APK
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - uses: actions/setup-node@master
+
+    - name: Download keystore
+      id: write_file
+      uses: timheuer/base64-to-file@v1
+      with:
+        fileName: 'keystore.jks'
+        encodedString: ${{ secrets.ANDROID_SIGNING_KEY }}
+
+    - name: Install node modules
+      run: |
+        cd MyExampleApp && npm install
+
+    - name: Make Gradlew Executable
+      run: cd MyExampleApp/android && chmod +x ./gradlew
+
+    - name: Build Android App Bundle
+      run: |
+        cd MyExampleApp/android && ./gradlew -PMYAPP_UPLOAD_STORE_FILE=${{ steps.write_file.outputs.filePath }} -PMYAPP_UPLOAD_STORE_PASSWORD=${{ secrets.ANDROID_SIGNING_STORE_PASSWORD }} -PMYAPP_UPLOAD_KEY_ALIAS=${{ secrets.ANDROID_SIGNING_ALIAS }} -PMYAPP_UPLOAD_KEY_PASSWORD=${{ secrets.ANDROID_SIGNING_KEY_PASSWORD }} assembleRelease --no-daemon
+
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: Signed App Bundle
+        path: MyExampleApp/android/app/build/outputs/apk/release
+
+    - name: upload artefact to App Center
+      uses: wzieba/AppCenter-Github-Action@v1
+      with:
+        appName: inavarro/React-Native-Intro
+        token: ${{secrets.APPCENTERTOKEN}}
+        group: Collaborators
+        file: MyExampleApp/android/app/build/outputs/apk/release/app-release.apk
+        notifyTesters: true
