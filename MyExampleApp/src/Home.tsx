@@ -6,6 +6,8 @@ const HomeStyles = StyleSheet.create({
     backgroundColor: '#041c2c',
     height: '100%',
     padding: 16,
+    justifyContent: 'space-around',
+    alignItems: 'center'
   },
   logo: {
     borderRadius: 200,
@@ -17,6 +19,7 @@ const HomeStyles = StyleSheet.create({
     textAlign: 'center'
   },
   subTitle: {
+    flex: 1,
     color: 'white',
     fontSize: 25,
     textAlign: 'center'
