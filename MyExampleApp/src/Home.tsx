@@ -1,5 +1,6 @@
 import React from 'react';
 import { SafeAreaView, Image, Text, Button, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 const HomeStyles = StyleSheet.create({
   background: {
@@ -27,6 +28,8 @@ const HomeStyles = StyleSheet.create({
 });
 
 export const Home: React.FC = () => {
+  const navigation = useNavigation();
+
   return (
     <SafeAreaView style={HomeStyles.background}>
 
@@ -40,7 +43,7 @@ export const Home: React.FC = () => {
 
       <Button
         color={'#00b5f1'}
-        onPress={() => { }}
+        onPress={() => { navigation.navigate('Values'); }}
         title="Estimate" />
     </SafeAreaView>
   )
