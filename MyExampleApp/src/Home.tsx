@@ -1,18 +1,42 @@
 import React from 'react';
-import { SafeAreaView, Image, Text, Button } from 'react-native';
+import { SafeAreaView, Image, Text, Button, StyleSheet } from 'react-native';
 
+const HomeStyles = StyleSheet.create({
+  background: {
+    backgroundColor: '#041c2c',
+    height: '100%',
+    padding: 16,
+  },
+  logo: {
+    borderRadius: 200,
+  },
+  title: {
+    color: 'white',
+    fontSize: 30,
+    fontWeight: 'bold',
+    textAlign: 'center'
+  },
+  subTitle: {
+    color: 'white',
+    fontSize: 25,
+    textAlign: 'center'
+  }
+});
 
 export const Home: React.FC = () => {
   return (
-    <SafeAreaView >
+    <SafeAreaView style={HomeStyles.background}>
+
       <Image
+        style={HomeStyles.logo}
         source={require('../assets/piggy.png')} />
 
-      <Text>Plain Poker</Text>
+      <Text style={HomeStyles.title}>Plain Poker</Text>
 
-      <Text>An app to estimate your awesome projects</Text>
+      <Text style={HomeStyles.subTitle}>An app to estimate your awesome projects</Text>
 
       <Button
+        color={'#00b5f1'}
         onPress={() => { }}
         title="Estimate" />
     </SafeAreaView>
