@@ -374,7 +374,7 @@ npx react-native run-android
 <div class="columns" style="text-align: center;">
   <div class="colum" style="margin: 0;">
 
-  This is our objective. Don't worry about the layout distribution. Feel fre to make other styles 😉
+  This is our objective. Don't worry about the layout distribution. Feel free to make other styles 😉
 
   <div class="alert">
   Buttons are special components and don't have style prop!
