@@ -1,0 +1,19 @@
+name: Publish presentation to gh-pages
+
+on:
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build & Deploy to GitHub Pages
+      env: 
+        MARP_ARGS: "presentation/workshop-guide.md -o index.html"
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_REPOSITORY: ${{ github.repository }}
+        PUBLISH_TO_BRANCH: gh-pages
+        BASE_URL: https://ismanapa.github.io/react-native-intro/
+      uses: ralexander-phi/marp-action@master
