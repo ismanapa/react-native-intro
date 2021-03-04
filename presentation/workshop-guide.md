@@ -37,6 +37,12 @@ section .alert {
   border-radius: .25rem;
   padding: .75rem 1.25rem;
 }
+
+section .small {
+  font-size: 25px; 
+  text-align:center; 
+  background-color: #d6d8d9;
+}
 </style>
 
 ![bg left:40% 90%](./react-icon.png)
@@ -75,7 +81,7 @@ cd MyExampleApp && npm install
 
 ---
 
-# Objetives of the workshop
+# Objectives of the workshop
 
 - A brief introduction to React Native.
 - How works React Native.
@@ -90,22 +96,22 @@ cd MyExampleApp && npm install
   <div class="colum">
 
   #### Native
-  platform specific
-  good performance
-  a project per platform
+  - platform specific
+  - good performance
+  - a project per platform
 
   </div>
   <div class="colum">
 
   #### Web apps
-  HTML apps adapted to mobile
-  PWA
+  - HTML apps adapted to mobile
+  - PWA
 
   </div>
   <div class="colum">
 
   #### Hybrid
-  App made in web technologies but wrapped in a native app
+  - App made in web technologies but wrapped in a native app
 
   </div>
 </div>
@@ -124,7 +130,7 @@ A framework for building native apps using React. In short, a kind of react rend
   </div>
 </div>
 
-There are also other renderes:
+There are also other renderers:
 
 ```
 react-canvas react-blessed react-vr react-pdf react-fs-renderer
@@ -221,16 +227,18 @@ In short, the bridge component is a message broker which interprets messages sen
 Every platform has its own implementation of the bridge on the native side.
 
 <div class="columns" style="text-align: center;">
-  <div class="colum" style="margin: 0;">
+  <div class="colum" style="margin: 0; font-size: 16px;">
 
   ![width:800px](./bridge-android.png)
+  Android bridge
   </div>
 </div>
 
 <div class="columns" style="text-align: center;">
-  <div class="colum" style="margin: 0;">
+  <div class="colum" style="margin: 0; font-size: 16px;">
 
   ![width:800px](./bridge-ios.png)
+  iOS bridge
   </div>
 </div>
 
@@ -272,6 +280,11 @@ npx react-native init AwesomeProject --template react-native-template-typescript
 <div class="columns" style="text-align: center;">
   <div class="colum" style="margin: 0;">
 
+  Javascript
+  ![height:450px](./js_folder.png)
+  </div>
+  <div class="colum" style="margin: 0;">
+
   Android
   ![height:450px](./android_folder.png)
   </div>
@@ -302,7 +315,7 @@ npx react-native run-android
 
 ---
 
-# Plain poker: an estimation tool
+# Plain poker: an estimating tool
 
 <div class="columns" style="text-align: center;">
   <div class="colum" style="margin: 0;">
@@ -354,6 +367,10 @@ npx react-native run-android
 
 # Example 2: Styling components
 
+<div class="small">
+  You can start with this branch <strong>example-2-start</strong>
+</div>
+
 <div class="columns" style="text-align: center;">
   <div class="colum" style="margin: 0;">
 
@@ -368,13 +385,17 @@ npx react-native run-android
 
   <div class="colum" style="margin: 0;">
 
-  ![height:500px](./demo_2.PNG)
+  ![height:460px](./demo_2.PNG)
   </div>
 </div>
 
 ---
 
 # Example 3: App layout
+
+<div class="small">
+  You can start with this branch <strong>example-3-start</strong>
+</div>
 
 <div class="columns" style="text-align: center;">
   <div class="colum" style="margin: 0;">
@@ -386,7 +407,7 @@ npx react-native run-android
 
   <div class="colum" style="margin: 0;">
 
-  ![height:500px](./demo_3.PNG)
+  ![height:480px](./demo_3.PNG)
   </div>
 </div>
 
@@ -412,6 +433,10 @@ In web development, we have the `history navigator` where we have a history of v
 
 # Example 4: Navigation
 
+<div class="small">
+  You can start with this branch <strong>example-4-start</strong>
+</div>
+
 Create a new stack navigator in the App component and also a new Page component.
 
 <div class="columns" style="text-align: center;">
@@ -430,6 +455,10 @@ Create a new stack navigator in the App component and also a new Page component.
 
 # Example 5: Lists
 
+<div class="small">
+  You can start with this branch <strong>example-5-start</strong>
+</div>
+
 <div class="columns" style="text-align: center;">
   <div class="colum" style="margin: 0;">
   
@@ -438,7 +467,7 @@ Create a new stack navigator in the App component and also a new Page component.
 
   <div class="colum" style="margin: 0;">
 
-  ![height:500px](./demo_5_code.png)
+  ![height:470px](./demo_5_code.png)
   </div>
 </div>
 
@@ -461,6 +490,10 @@ Create a new stack navigator in the App component and also a new Page component.
 ---
 
 # Example 6: Finishing the app
+
+<div class="small">
+  You can start with this branch <strong>example-6-start</strong>
+</div>
 
 In the last exercise, everyone is going to finish the app on their own.
 
